@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   background-size: cover !important;
   background-position: center !important;
   padding: 1em 2em;
-  background: #313131;
+  background: rgba(49, 49, 49, 0.9);
   border-radius: 10px;
   p {
     font-size: 0.9125rem;
