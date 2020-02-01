@@ -16,7 +16,7 @@ exports[`<Footer /> should render and match the snapshot 1`] = `
       <select
         className="Select-sc-1sm01tk-0 wIjFa"
         onChange={[Function]}
-        value="en"
+        value="de"
       >
         <option
           value="en"

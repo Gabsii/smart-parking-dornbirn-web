@@ -17,16 +17,12 @@ export default defineMessages({
     defaultMessage:
       'A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices',
   },
-  trymeHeader: {
-    id: `${scope}.tryme.header`,
-    defaultMessage: 'Try me!',
+  useCasesHeader: {
+    id: `${scope}.usecases.header`,
+    defaultMessage: 'Use Cases',
   },
-  trymeMessage: {
-    id: `${scope}.tryme.message`,
+  useCasesMessage: {
+    id: `${scope}.usecases.message`,
     defaultMessage: 'Show Github repositories by',
-  },
-  trymeAtPrefix: {
-    id: `${scope}.tryme.atPrefix`,
-    defaultMessage: '@',
   },
 });

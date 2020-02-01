@@ -6,23 +6,25 @@ import Wrapper from '../Wrapper';
 describe('<Wrapper />', () => {
   it('should render an <div> tag', () => {
     const { container } = render(<Wrapper />);
-    expect(container.firstChild.tagName).toEqual('DIV');
+    expect(container.firstElementChild.tagName).toEqual('DIV');
   });
 
-  it('should have a className attribute', () => {
+  it('should have a class attribute', () => {
     const { container } = render(<Wrapper />);
-    expect(container.firstChild.hasAttribute('class')).toBe(true);
+    const element = container.firstElementChild;
+    expect(element.hasAttribute('class')).toBe(true);
   });
 
   it('should adopt a valid attribute', () => {
     const id = 'test';
     const { container } = render(<Wrapper id={id} />);
-    expect(container.firstChild.hasAttribute('id')).toBe(true);
-    expect(container.firstChild.id).toEqual(id);
+    const element = container.firstElementChild;
+    expect(element.id).toEqual(id);
   });
 
   it('should not adopt an invalid attribute', () => {
     const { container } = render(<Wrapper attribute="test" />);
-    expect(container.firstChild.hasAttribute('attribute')).toBe(false);
+    const element = container.firstElementChild;
+    expect(element.hasAttribute('attribute')).toBe(false);
   });
 });

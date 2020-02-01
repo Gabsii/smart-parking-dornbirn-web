@@ -20,12 +20,10 @@
   "boilerplate.containers.FeaturePage.scaffolding.message": "Automatisieren Sie die Kreation von Komponenten, Containern, Routen, Selektoren und Sagas – und ihre Tests – direkt von dem Terminal!",
   "boilerplate.containers.FeaturePage.state_management.header": "Berechenbare Stateverwaltung",
   "boilerplate.containers.FeaturePage.state_management.message": "Unidirectional data flow erlaubt uns alle Änderungen ihrer Applikation zu loggen und time travel debugging einzusetzen.",
-  "boilerplate.containers.HomePage.start_project.header": "Beginnen Sie Ihr nächstes React Projekt in Sekunden",
-  "boilerplate.containers.HomePage.start_project.message": "Ein skalierendes, offline-first Fundament mit der besten DX und einem Fokus auf Performance und bewährte Methoden",
-  "boilerplate.containers.HomePage.tryme.atPrefix": "@",
-  "boilerplate.containers.HomePage.tryme.header": "Probiere mich!",
-  "boilerplate.containers.HomePage.tryme.message": "Zeige die Github Repositories von",
-  "boilerplate.containers.LocaleToggle.de": "DE",
-  "boilerplate.containers.LocaleToggle.en": "EN",
+  "boilerplate.containers.HomePage.start_project.header": "\"OpenParking\"",
+  "boilerplate.containers.HomePage.start_project.message": "OpenParking ist ein Parking Service der Tempus. Anim voluptatibus doloribus! Consectetuer sapiente, aliquet volutpat cupidatat donec faucibus rhoncus, torquent corrupti aliquet mattis necessitatibus officia, aenean? Nihil minima facilis quisquam erat tenetur, ante lorem veritatis imperdiet aute maxime molestie! Ex similique sequi sint ratione aut. Ipsam hymenaeos, porttitor aliquam officia taciti cupidatat blandit hymenaeos accusamus phasellus, rhoncus, fames? Congue, molestias repellat. Luctus, eget asperiores, minim platea iure primis vero eleifend, tenetur atque orci qui tristique, ridiculus reprehenderit provident nunc? Sollicitudin praesent, vel proin. Molestie cupidatat, in dolore eveniet per at fames, sociosqu tristique odio. Inceptos repellendus torquent, tenetur, quia optio auctor ipsum nihil alias, sociosqu nobis mauris.",
+  "boilerplate.containers.HomePage.usecases.header": "Verwendungszwecke",
+  "boilerplate.containers.LocaleToggle.de": "de",
+  "boilerplate.containers.LocaleToggle.en": "en",
   "boilerplate.containers.NotFoundPage.header": "Seite nicht gefunden."
 }
