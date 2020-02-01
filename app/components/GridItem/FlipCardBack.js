@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   padding: 1em 2em;
   background: rgba(49, 49, 49, 0.9);
   border-radius: 10px;
+
   p {
     font-size: 0.9125rem;
     line-height: 160%;
