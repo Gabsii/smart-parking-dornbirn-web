@@ -42,31 +42,17 @@ export function HomePage() {
             <FormattedMessage {...messages.useCasesHeader} />
           </CenteredH2>
           <Grid>
-            {/* TODO: add localization */}
-            <GridItem className="flip" src="https://picsum.photos/200/220" alt="alt">
-              <H3>Test</H3>
-              <p>StyledCard</p>
-            </GridItem>
-            <GridItem className="flip" src="https://picsum.photos/200/221" alt="alt">
-              <H3>Test</H3>
-              <p>Stylesard</p>
-            </GridItem>
-            <GridItem className="flip" src="https://picsum.photos/200/222" alt="alt">
-              <H3>Test</H3>
-              <p>Stylesard</p>
-            </GridItem>
-            <GridItem className="flip" src="https://picsum.photos/200/223" alt="alt">
-              <H3>Test</H3>
-              <p>StyledCard</p>
-            </GridItem>
-            <GridItem className="flip" src="https://picsum.photos/200/224" alt="alt">
-              <H3>Test</H3>
-              <p>Stylesard</p>
-            </GridItem>
-            <GridItem className="flip" src="https://picsum.photos/200/225" alt="alt">
-              <H3>Test</H3>
-              <p>Stylesard</p>
-            </GridItem>
+            { messages.useCases.map((useCase, index)=> {
+                return(<GridItem classname="flip" key={index} src={`https://picsum.photos/200/22${index}`}>
+                  <H3>
+                    <FormattedMessage {...useCase[0]} />
+                  </H3>
+                  <p>
+                    <FormattedMessage {...useCase[1]} />
+                  </p>
+                </GridItem>);
+              })
+            }
           </Grid>
         </CenteredSection>
       </div>

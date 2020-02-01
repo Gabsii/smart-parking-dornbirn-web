@@ -21,8 +21,67 @@ export default defineMessages({
     id: `${scope}.usecases.header`,
     defaultMessage: 'Use Cases',
   },
-  useCasesMessage: {
-    id: `${scope}.usecases.message`,
-    defaultMessage: 'Show Github repositories by',
-  },
+  useCases: [
+    [
+      {
+        id: `${scope}.usecases.1.header`,
+        defaultMessage: 'Use Case Header',
+      },
+      {
+        id: `${scope}.usecases.1.message`,
+        defaultMessage: 'Use Case Message',
+      },
+    ],
+    [
+      {
+        id: `${scope}.usecases.2.header`,
+        defaultMessage: 'Use Case Header',
+      },
+      {
+        id: `${scope}.usecases.2.message`,
+        defaultMessage: 'Use Case Message',
+      },
+    ],
+    [
+      {
+        id: `${scope}.usecases.3.header`,
+        defaultMessage: 'Use Case Header',
+      },
+      {
+        id: `${scope}.usecases.3.message`,
+        defaultMessage: 'Use Case Message',
+      },
+    ],
+    [
+      {
+        id: `${scope}.usecases.4.header`,
+        defaultMessage: 'Use Case Header',
+      },
+      {
+        id: `${scope}.usecases.4.message`,
+        defaultMessage: 'Use Case Message',
+      },
+    ],
+    [
+      {
+        id: `${scope}.usecases.5.header`,
+        defaultMessage: 'Use Case Header',
+      },
+      {
+        id: `${scope}.usecases.5.message`,
+        defaultMessage: 'Use Case Message',
+      },
+    ],
+    [
+      {
+        id: `${scope}.usecases.6.header`,
+        defaultMessage: 'Use Case Header',
+      },
+      {
+        id: `${scope}.usecases.6.message`,
+        defaultMessage: 'Use Case Message',
+      },
+    ],
+  ]
+    ,
 });
