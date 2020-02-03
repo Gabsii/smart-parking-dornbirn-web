@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "name": "smart-city-web",
+    "public": false,
+    "builds": [
+        {"src": "package.json", "use": "@now/static-build"}
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1",
+            "headers": { "Cache-Control": "max-age=60, s-maxage=86400" }
+        }, {
+            "src": "/favicon.ico",
+            "dest": "/favicon.ico",
+            "headers": { "Cache-Control": "max-age=60, s-maxage=86400" }
+        }, {
+            "src": "/manifest.json",
+            "dest": "/manifest.json",
+            "headers": { "Cache-Control": "max-age=60, s-maxage=86400" }
+        }, {
+            "src": "/service-worker.js",
+            "dest": "/service-worker.js",
+            "headers": { "Cache-Control": "no-cache" }
+        }, {
+            "src": "/precache-manifest.*.js",
+            "dest": "/precache-manifest.*.js",
+            "headers": { "Cache-Control": "no-cache" }
+        },{  
+            "src": "/(.*)", 
+            "dest": "/index.html", 
+            "headers": {"cache-control": "s-maxage=0"}
+        }
+    ]
+}
