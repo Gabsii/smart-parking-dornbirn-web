@@ -12,6 +12,7 @@ import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
 import ListItemTitle from './ListItemTitle';
+import LeafletMap from 'containers/LeafletMap';
 
 export default function FeaturePage() {
   return (
@@ -26,7 +27,8 @@ export default function FeaturePage() {
       <H1>
         <FormattedMessage {...messages.header} />
       </H1>
-      <List>
+      <LeafletMap/>
+      {/* <List>
         <ListItem>
           <ListItemTitle>
             <FormattedMessage {...messages.scaffoldingHeader} />
@@ -71,7 +73,7 @@ export default function FeaturePage() {
             <FormattedMessage {...messages.intlMessage} />
           </p>
         </ListItem>
-      </List>
+      </List> */}
     </div>
   );
 }
