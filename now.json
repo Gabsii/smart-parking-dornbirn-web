@@ -4,12 +4,5 @@
     "public": false,
     "builds": [
         {"src": "package.json", "use": "@now/static-build", "config": {"distDir": "build"}}
-    ],
-    "routes": [
-        {  
-            "src": "/(.*)", 
-            "dest": "/index.html", 
-            "headers": {"cache-control": "s-maxage=0"}
-        }
     ]
 }
