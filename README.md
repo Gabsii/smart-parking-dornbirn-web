@@ -6,6 +6,8 @@ Smart Parking Dornbirn is a three-part repository for the [Smart City Dornbirn](
 
 - NodeJS
 - NPM
+- Docker
+- PrismaJS
 
 ## Installation
 
@@ -14,6 +16,7 @@ npm run setup
 npm start
 ```
 
+Make sure to symlink your `.env` file in to `backend/.env` and `prisma/.env`
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
