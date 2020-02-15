@@ -59,7 +59,8 @@
     "*.json": [
       "prettier --write",
       "git add --force"
-    ]
+    ],
+    "ignore": ["backend/"]
   },
   "pre-commit": "lint:staged",
   "resolutions": {
