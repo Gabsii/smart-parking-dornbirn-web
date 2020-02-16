@@ -7,6 +7,8 @@ const Device = require('./models/Device');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+console.log(process.env);
+
 app.post('/device', async function(req, res, next) {
   if (
     req.headers.authorization &&
