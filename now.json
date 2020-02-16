@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "name": "smart-city-web",
     "public": false,
     "builds": [
         {
@@ -33,14 +32,14 @@
         }
     ],
     "env": {
-        "BACKEND_PORT": 8080,
+        "BACKEND_PORT": "8080",
         "APP_ENV": "production",
-        "AUTHORIZATION": "",
-        "DB_CONNECTION": "",
-        "DB_HOST": "",
-        "DB_PORT": "",
-        "DB_DATABASE": "",
-        "DB_USERNAME": "",
-        "DB_PASSWORD": ""
+        "AUTHORIZATION": "@authorization",
+        "DB_CONNECTION": "@db_connection",
+        "DB_HOST": "@db_host",
+        "DB_PORT": "@db_port",
+        "DB_DATABASE": "@db_database",
+        "DB_USERNAME": "@db_username",
+        "DB_PASSWORD": "@db_password"
     }
 }
