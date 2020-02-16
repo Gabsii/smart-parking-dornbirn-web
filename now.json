@@ -31,5 +31,16 @@
             "dest": "/precache-manifest.*.js",
             "headers": { "Cache-Control": "no-cache" }
         }
-    ]
+    ],
+    "env": {
+        "BACKEND_PORT": 8080,
+        "APP_ENV": "production",
+        "AUTHORIZATION": "",
+        "DB_CONNECTION": "",
+        "DB_HOST": "",
+        "DB_PORT": "",
+        "DB_DATABASE": "",
+        "DB_USERNAME": "",
+        "DB_PASSWORD": ""
+    }
 }
