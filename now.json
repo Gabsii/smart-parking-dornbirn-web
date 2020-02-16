@@ -4,18 +4,16 @@
     "public": false,
     "builds": [
         {
-            "src": "package.json", "use": "@now/static-build", "config": { "distDir": "build" },
+            "src": "package.json", "use": "@now/static-build", "config": { "distDir": "build" }
+        },
+        {
             "src": "backend/index.js", "use": "@now/node"
         }
     ],
     "routes": [
         {
-            "src": "^http://(.*)",
-            "status": 301,
-            "headers": { "Location": "https://spoti-vote.com/$1" }
-        }, {
             "src": "/api/{.*}", 
-            "dest": "/backend/server.js"
+            "dest": "/backend/index.js"
         }, {
             "src": "/favicon.ico",
             "dest": "/favicon.ico",
