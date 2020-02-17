@@ -1,9 +1,8 @@
-console.log(process.env);
-
 const express = require('express');
 const app = express();
 const db = require('./connection');
 const Device = require('./models/Device');
+require('mysql2');
 
 // config
 app.use(express.json());

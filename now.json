@@ -6,13 +6,15 @@
             "src": "package.json", "use": "@now/static-build", "config": { "distDir": "build" }
         },
         {
-            "src": "api/index.js", "use": "@now/node"
+            "src": "api/**/*.js", "use": "@now/node"
         }
     ],
     "routes": [
-        {
-            "src": "/api/{.*}", 
-            "dest": "/api/index.js"
+        { "handle": "filesystem" },
+        { 
+            "src": "api/devices", 
+            "methods": ["POST"], 
+            "dest": "/api/devices/create" 
         }, {
             "src": "/favicon.ico",
             "dest": "/favicon.ico",
