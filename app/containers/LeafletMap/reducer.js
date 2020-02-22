@@ -1,7 +1,5 @@
 /*
- *
  * LeafletMap reducer
- *
  */
 import produce from 'immer';
 import { 
@@ -10,8 +8,7 @@ import {
   FETCH_DATA_SUCCESS,
 } from './constants';
 export const initialState = {
-  devices: [{}],
-  currDevice: 0,
+  devices: [],
   loading: true,
   error: false,
 };
@@ -31,9 +28,7 @@ const leafletMapReducer = (state = initialState, action) =>
       case FETCH_DATA_SUCCESS:
         state.loading = false;
         state.error = false;
-        state.devices = []
-        state.devices.push(action.devices);
-        console.log('success', state);
+        state.devices = action.devices;
         break;
     }
   });

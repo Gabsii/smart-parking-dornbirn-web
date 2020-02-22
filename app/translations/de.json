@@ -38,5 +38,5 @@
   "boilerplate.containers.LocaleToggle.de": "de",
   "boilerplate.containers.LocaleToggle.en": "en",
   "boilerplate.containers.NotFoundPage.header": "Seite nicht gefunden.",
-  "app.containers.LeafletMap": "Das ist der LeafletMap Container!"
+  "app.containers.LeafletMap.header": "Das ist der LeafletMap Container!"
 }

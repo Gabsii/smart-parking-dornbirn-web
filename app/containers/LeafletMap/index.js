@@ -23,6 +23,7 @@ import messages from './messages';
 
 export function LeafletMap(props) {
   const {devices, loading, error, fetchDevices } = props;
+  
   useInjectReducer({ key: 'leafletMap', reducer });
   useInjectSaga({ key: 'leafletMap', saga });
   
@@ -45,7 +46,7 @@ export function LeafletMap(props) {
             { devices && devices.map((device)=> {
                 let coordinates = [device.latitude, device.longitude];
                 return (
-                  <Marker position={coordinates}></Marker>
+                  <Marker key={device.id} position={coordinates}></Marker>
                 ); 
             })}
         </Map>
