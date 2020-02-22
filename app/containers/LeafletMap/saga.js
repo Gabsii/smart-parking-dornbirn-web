@@ -3,21 +3,21 @@ import request from 'utils/request';
 import { fetchDevicesSuccess, fetchDevicesError } from './actions';
 import { FETCH_DATA } from './constants';
 
-export function* fetchDevicesAsync() {
+function* fetchDevicesAsync() {
   yield takeLatest(FETCH_DATA, fetchAllDevices);
 }
 
 function* fetchAllDevices() {
   try {
-    const requestUrl = process.env.NODE_ENV === 'production' 
-      ? '/api/devices'
-      : 'http://localhost:8000/device';
-    const devices = yield call(request, requestUrl)
-    console.log('fetch done')
+    const requestUrl =
+      process.env.NODE_ENV === 'production'
+        ? '/api/devices'
+        : 'http://localhost:8000/device';
+    const devices = yield call(request, requestUrl);
 
     yield put(fetchDevicesSuccess(devices));
   } catch (error) {
-    yield put(fetchDevicesError(error.toString()));    
+    yield put(fetchDevicesError(error.toString()));
   }
 }
 

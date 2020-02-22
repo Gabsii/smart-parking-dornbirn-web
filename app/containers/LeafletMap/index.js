@@ -7,53 +7,51 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, TileLayer } from 'react-leaflet';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
-import { 
-  makeSelectDevices, 
-  makeSelectLoading, 
-  makeSelectError 
+import {
+  makeSelectDevices,
+  makeSelectLoading,
+  makeSelectError,
 } from './selectors';
 import reducer from './reducer';
-import { fetchDevices, buttonClicked } from './actions';
+import { fetchDevices } from './actions';
 import saga from './saga';
 import messages from './messages';
 
 export function LeafletMap(props) {
-  const {devices, loading, error, fetchDevices, buttonClicked } = props;
+  const { devices, loading, error, fetchDevicesProp } = props;
 
   useInjectReducer({ key: 'leafletMap', reducer });
   useInjectSaga({ key: 'leafletMap', saga });
-  
-  useEffect(() => {
-    fetchDevices();
-  }, [fetchDevices]);
 
-  console.log('props', props);
-  // if (loading) return(<div>Loading...</div>)
+  useEffect(() => {
+    fetchDevicesProp();
+  }, [fetchDevicesProp]);
+
+  if (loading) return <div>Loading...</div>;
   return (
     <div>
-      <button onClick={buttonClicked}></button>
       <FormattedMessage {...messages.header} />
-      <br></br>
-      {loading ? "loading..." : ""}
-      { !loading && !error ? 
-        <Map center={[47.3, 9.9]} zoom={9} style={{height: '500px'}}>
-          <TileLayer 
-              url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      <br />
+      {loading ? 'loading...' : ''}
+      {!loading && !error ? (
+        <Map center={[47.3, 9.9]} zoom={9} style={{ height: '500px' }}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-            { devices && devices.map((device)=> {
-                let coordinates = [device.latitude, device.longitude];
-                return (
-                  <Marker key={device.id} position={coordinates}></Marker>
-                ); 
+          {devices &&
+            devices.map(device => {
+              const coordinates = [device.latitude, device.longitude];
+              return <Marker key={device.id} position={coordinates} />;
             })}
         </Map>
-        : ''
-      }
+      ) : (
+        ''
+      )}
     </div>
   );
 }
@@ -63,6 +61,8 @@ LeafletMap.propTypes = {
   loading: PropTypes.bool,
   currDevice: PropTypes.number,
   error: PropTypes.any,
+  fetchDevicesProp: PropTypes.func,
+  buttonClickedProp: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -73,8 +73,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchDevices: () => dispatch(fetchDevices()),
-    buttonClicked: () => dispatch(buttonClicked()),
+    fetchDevicesProp: () => dispatch(fetchDevices()),
   };
 }
 

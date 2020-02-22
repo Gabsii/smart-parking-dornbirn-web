@@ -14,8 +14,8 @@ const selectLeafletMapDomain = state => state.leafletMap || initialState;
 const makeSelectDevices = () =>
   createSelector(
     selectLeafletMapDomain,
-    leafletMapState => leafletMapState.devices
-  ); 
+    leafletMapState => leafletMapState.devices,
+  );
 
 const makeSelectLoading = () =>
   createSelector(
@@ -34,12 +34,15 @@ const makeSelectError = () =>
  */
 
 const makeSelectLeafletMap = () =>
-  createSelector(selectLeafletMapDomain, leafletMapState => leafletMapState.toJS());
+  createSelector(
+    selectLeafletMapDomain,
+    leafletMapState => leafletMapState.toJS(),
+  );
 
 export default makeSelectLeafletMap;
-export { 
-  selectLeafletMapDomain, 
-  makeSelectDevices, 
-  makeSelectLoading, 
-  makeSelectError
+export {
+  selectLeafletMapDomain,
+  makeSelectDevices,
+  makeSelectLoading,
+  makeSelectError,
 };

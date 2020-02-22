@@ -2,12 +2,7 @@
  * LeafletMap reducer
  */
 import produce from 'immer';
-import { 
-  FETCH_DATA, 
-  FETCH_DATA_ERROR, 
-  FETCH_DATA_SUCCESS,
-  BUTTON_CLICK,
-} from './constants';
+import { FETCH_DATA, FETCH_DATA_ERROR, FETCH_DATA_SUCCESS } from './constants';
 export const initialState = {
   devices: [],
   loading: true,
@@ -15,26 +10,21 @@ export const initialState = {
 };
 
 /* eslint-disable default-case, no-param-reassign */
-const leafletMapReducer = (state = initialState, action) => 
-  produce(state, () => {
+const leafletMapReducer = (state = initialState, action) =>
+  produce(state, draftState => {
     switch (action.type) {
       case FETCH_DATA:
-        state.loading = true;
-        state.error = false;
+        draftState.loading = true;
+        draftState.error = false;
         break;
       case FETCH_DATA_ERROR:
-        state.loading = false
-        state.error = action.error;
+        draftState.loading = false;
+        draftState.error = action.error;
         break;
       case FETCH_DATA_SUCCESS:
-        console.log(action);
-        state.loading = false;
-        state.error = false;
-        state.devices = action.devices;
-        console.log("fetch succ", state);
-        break;
-      case BUTTON_CLICK: 
-        state.loading = !state.loading;
+        draftState.loading = false;
+        draftState.error = false;
+        draftState.devices = action.devices;
         break;
     }
   });
