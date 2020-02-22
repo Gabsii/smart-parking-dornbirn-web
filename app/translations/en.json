@@ -37,5 +37,6 @@
   "boilerplate.containers.HomePage.usecases.6.message": "improved compliance and increased officer productivity and amount of tickets per chase.",
   "boilerplate.containers.LocaleToggle.de": "de",
   "boilerplate.containers.LocaleToggle.en": "en",
-  "boilerplate.containers.NotFoundPage.header": "Page not found."
+  "boilerplate.containers.NotFoundPage.header": "Page not found.",
+  "app.containers.LeafletMap": "This is the LeafletMap container!"
 }
