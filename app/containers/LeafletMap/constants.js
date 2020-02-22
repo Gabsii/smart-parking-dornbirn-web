@@ -13,3 +13,4 @@ export const FETCH_DATA_SUCCESS = 'app/LeafletMap/FETCH_DATA_SUCCESS';
 export const FETCH_DATA_ERROR = 'app/LeafletMap/FETCH_DATA_ERROR';
 
 export const CLICK_DEVICE = 'app/LeafletMap/CLICK_DEVICE';
+export const BUTTON_CLICK = 'app/LeafletMap/BUTTON_CLICK';

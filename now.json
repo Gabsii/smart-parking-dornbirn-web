@@ -10,11 +10,27 @@
         }
     ],
     "routes": [
-        { "handle": "filesystem" },
+        { 
+            "handle": "filesystem"
+        },
+        { 
+            "src": "api/devices", 
+            "headers": {
+                "Content-Type": "application/json",  
+                "Access-Control-Allow-Headers": "*",
+                "Access-Control-Allow-Origin": "*"
+            },
+            "dest": "/api/devices/"
+        },
         { 
             "src": "api/devices", 
             "methods": ["POST"], 
-            "dest": "/api/devices/create" 
+            "headers": {
+                "Content-Type": "application/json",  
+                "Access-Control-Allow-Headers": "*",
+                "Access-Control-Allow-Origin": "*.pipedream.net, *.gabsii.com"
+            },
+            "dest": "/api/devices/create"
         }, {
             "src": "/favicon.ico",
             "dest": "/favicon.ico",

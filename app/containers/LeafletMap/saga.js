@@ -1,10 +1,10 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
 import request from 'utils/request';
 import { fetchDevicesSuccess, fetchDevicesError } from './actions';
 import { FETCH_DATA } from './constants';
 
-function* fetchDevicesAsync() {
-  yield takeEvery(FETCH_DATA, fetchAllDevices);
+export function* fetchDevicesAsync() {
+  yield takeLatest(FETCH_DATA, fetchAllDevices);
 }
 
 function* fetchAllDevices() {

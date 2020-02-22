@@ -17,26 +17,28 @@ import {
   makeSelectError 
 } from './selectors';
 import reducer from './reducer';
-import { fetchDevices } from './actions';
+import { fetchDevices, buttonClicked } from './actions';
 import saga from './saga';
 import messages from './messages';
 
 export function LeafletMap(props) {
-  const {devices, loading, error, fetchDevices } = props;
-  
+  const {devices, loading, error, fetchDevices, buttonClicked } = props;
+
   useInjectReducer({ key: 'leafletMap', reducer });
   useInjectSaga({ key: 'leafletMap', saga });
   
   useEffect(() => {
     fetchDevices();
-  });
+  }, [fetchDevices]);
 
   console.log('props', props);
+  // if (loading) return(<div>Loading...</div>)
   return (
     <div>
+      <button onClick={buttonClicked}></button>
       <FormattedMessage {...messages.header} />
       <br></br>
-      { loading ? 'Loading' : '' }
+      {loading ? "loading..." : ""}
       { !loading && !error ? 
         <Map center={[47.3, 9.9]} zoom={9} style={{height: '500px'}}>
           <TileLayer 
@@ -71,7 +73,8 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchDevices: () => dispatch(fetchDevices())
+    fetchDevices: () => dispatch(fetchDevices()),
+    buttonClicked: () => dispatch(buttonClicked()),
   };
 }
 
