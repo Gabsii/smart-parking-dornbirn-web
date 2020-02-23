@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { Map, Marker, TileLayer } from 'react-leaflet';
+import { Map, Marker, TileLayer, Popup } from 'react-leaflet';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
@@ -20,6 +20,10 @@ import reducer from './reducer';
 import { fetchDevices } from './actions';
 import saga from './saga';
 import messages from './messages';
+import MapMarker from './Icon';
+
+import free from './iconMarker-free.svg';
+import parked from './iconMarker-parked.svg';
 
 export function LeafletMap(props) {
   const { devices, loading, error, fetchDevicesProp } = props;
@@ -46,7 +50,18 @@ export function LeafletMap(props) {
           {devices &&
             devices.map(device => {
               const coordinates = [device.latitude, device.longitude];
-              return <Marker key={device.id} position={coordinates} />;
+              return (
+                <Marker
+                  icon={device.isParked ? MapMarker(parked) : MapMarker(free)}
+                  key={device.id}
+                  position={coordinates}
+                >
+                  <Popup>
+                    Last Updated At:{' '}
+                    {new Date(device.updatedAt).toLocaleString()}
+                  </Popup>
+                </Marker>
+              );
             })}
         </Map>
       ) : (

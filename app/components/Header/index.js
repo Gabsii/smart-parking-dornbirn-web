@@ -11,7 +11,7 @@ import messages from './messages';
 function Header() {
   return (
     <div>
-      <A href={window.location}>
+      <A href={window.location.origin}>
         <Img src={Banner} alt="react-boilerplate - Logo" />
       </A>
       <NavBar>

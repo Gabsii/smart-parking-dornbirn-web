@@ -21,7 +21,7 @@ function GridItem({ src, className, children }) {
 GridItem.propTypes = {
   src: PropTypes.string.isRequired,
   className: PropTypes.string,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
 };
 
 export default GridItem;

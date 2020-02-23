@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const db = require('./connection');
 const Device = require('./models/Device');
-const cors = require('cors');
 
 // config
 app.use(express.json());
@@ -48,17 +48,10 @@ app.get('/device/:id', async function(req, res, next) {
   next();
 });
 
-app.get('/device', async function(req, res, next) {
+app.get('/device', async function(_req, res, next) {
   try {
     const devices = await Device.findAll({
-      attributes: [
-        'id',
-        'deviceId',
-        'isParked',
-        'latitude',
-        'longitude',
-        'updatedAt',
-      ],
+      attributes: ['id', 'isParked', 'latitude', 'longitude', 'updatedAt'],
     });
     res.send(devices);
   } catch (error) {
