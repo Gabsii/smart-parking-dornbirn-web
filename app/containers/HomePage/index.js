@@ -9,16 +9,19 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
 
-import H2 from 'components/H2';
+import H1 from 'components/H1';
 import H3 from 'components/H3';
-import CenteredH2 from './CenteredH2';
 import Grid from 'components/Grid';
 import GridItem from 'components/GridItem';
+import home from 'images/undraw_home.svg';
+import CenteredH2 from './CenteredH2';
 import CenteredSection from './CenteredSection';
+import Hero from './Hero';
+import HeroImg from './HeroImg';
+import HeroMessage from './HeroMessage';
 import messages from './messages';
 
 export function HomePage() {
-
   return (
     <article>
       <Helmet>
@@ -28,31 +31,37 @@ export function HomePage() {
           content="A React.js Boilerplate application homepage"
         />
       </Helmet>
-      <div>
+      <div style={{ marginTop: '75px' }}>
         <CenteredSection>
-          <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
-          </H2>
-          <p>
-            <FormattedMessage {...messages.startProjectMessage} />
-          </p>
+          <Hero>
+            <HeroMessage>
+              <H1>
+                <FormattedMessage {...messages.startProjectHeader} />
+              </H1>
+              <FormattedMessage {...messages.startProjectMessage} />
+            </HeroMessage>
+            <HeroImg src={home} />
+          </Hero>
         </CenteredSection>
         <CenteredSection>
           <CenteredH2>
             <FormattedMessage {...messages.useCasesHeader} />
           </CenteredH2>
           <Grid>
-            { messages.useCases.map((useCase, index)=> {
-                return(<GridItem classname="flip" key={index} src={`https://picsum.photos/200/22${index}`}>
-                  <H3>
-                    <FormattedMessage {...useCase[0]} />
-                  </H3>
-                  <p>
-                    <FormattedMessage {...useCase[1]} />
-                  </p>
-                </GridItem>);
-              })
-            }
+            {messages.useCases.map((useCase, index) => (
+              <GridItem
+                classname="flip"
+                key={`${useCase[0]}-${index}`}
+                src={`https://picsum.photos/200/22${index}`}
+              >
+                <H3>
+                  <FormattedMessage {...useCase[0]} />
+                </H3>
+                <p>
+                  <FormattedMessage {...useCase[1]} />
+                </p>
+              </GridItem>
+            ))}
           </Grid>
         </CenteredSection>
       </div>
@@ -60,7 +69,4 @@ export function HomePage() {
   );
 }
 
-
-export default compose(
-  memo,
-)(HomePage);
+export default compose(memo)(HomePage);

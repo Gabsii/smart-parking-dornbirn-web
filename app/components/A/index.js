@@ -5,7 +5,7 @@
 import styled from 'styled-components';
 
 const A = styled.a`
-  color: #41addd;
+  color: #c1352e;
 
   &:hover {
     color: #6cc0e5;

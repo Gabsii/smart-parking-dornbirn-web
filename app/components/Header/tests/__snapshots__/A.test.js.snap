@@ -2,7 +2,7 @@
 
 exports[`<A /> should match the snapshot 1`] = `
 .c0 {
-  color: #41addd;
+  color: #c1352e;
   padding: 2em 0;
 }
 

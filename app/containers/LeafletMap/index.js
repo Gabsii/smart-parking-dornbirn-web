@@ -42,7 +42,12 @@ export function LeafletMap(props) {
       <br />
       {loading ? 'loading...' : ''}
       {!loading && !error ? (
-        <Map center={[47.3, 9.9]} zoom={9} style={{ height: '500px' }}>
+        <Map
+          center={[47.3, 9.9]}
+          zoom={9}
+          maxZoom={18}
+          style={{ height: '500px' }}
+        >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -57,8 +62,8 @@ export function LeafletMap(props) {
                   position={coordinates}
                 >
                   <Popup>
-                    Last Updated At:{' '}
-                    {new Date(device.updatedAt).toLocaleString()}
+                    Last Updated At:
+                    {` ${new Date(device.updatedAt).toLocaleString()}`}
                   </Popup>
                 </Marker>
               );
