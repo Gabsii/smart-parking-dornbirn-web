@@ -39,5 +39,12 @@
   "boilerplate.containers.LocaleToggle.de": "de",
   "boilerplate.containers.LocaleToggle.en": "en",
   "boilerplate.containers.NotFoundPage.header": "Page not found.",
-  "app.containers.LeafletMap.header": "This is the LeafletMap container!"
+  "app.containers.LeafletMap.header": "This is the LeafletMap container!",
+  "app.containers.DeviceInfo.device": "Device: {device}",
+  "app.containers.DeviceInfo.status_occupied": "Status: Occupied",
+  "app.containers.DeviceInfo.status_free": "Status: Free",  
+  "app.containers.DeviceInfo.updated": "Last seen: ",
+  "app.containers.DeviceInfo.address": "Address: {address}",
+  "app.containers.DeviceInfo.reserve": "Reserve (TBD)",
+  "app.containers.DeviceInfo.reservation_notice": "The reservation function is currently still in planning and will be introduced soon."
 }

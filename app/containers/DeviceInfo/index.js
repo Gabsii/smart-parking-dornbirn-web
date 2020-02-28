@@ -4,10 +4,10 @@
  *
  */
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedDate } from 'react-intl';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -31,29 +31,68 @@ export function DeviceInfo(props) {
 
   return (
     <Wrapper id="device-info">
-      {/* <FormattedMessage {...messages.header} /> */}
       <DeviceStatus>
         <H2>
-          Device: {deviceId}
+          <FormattedMessage
+            {...messages.device}
+            values={{
+              device: deviceId,
+            }}
+          />
           <StatusIndicator isParked={isParked} />
         </H2>
-        <div>Status: {isParked ? 'occupied' : 'free'}</div>
         <div>
-          {isParked
-            ? `Last Updated At: ${new Date(updatedAt).toLocaleString()}`
-            : ''}
+          {isParked ? (
+            <FormattedMessage {...messages.status_occupied} />
+          ) : (
+            <FormattedMessage {...messages.status_free} />
+          )}
         </div>
-        <div>Address: TBD</div>
+        <div>
+          {isParked ? (
+            <Fragment>
+              <FormattedMessage {...messages.updated} />
+              <FormattedDate
+                value={updatedAt}
+                day="numeric"
+                month="numeric"
+                year="numeric"
+                hour="numeric"
+                minute="numeric"
+                seconds="numeric"
+              />
+            </Fragment>
+          ) : (
+            ''
+          )}
+        </div>
+        <div>
+          <FormattedMessage
+            {...messages.address}
+            values={{
+              address: 'TBD',
+            }}
+          />
+        </div>
+        <div style={{ fontSize: '12px', marginTop: '5px' }}>
+          <FormattedMessage {...messages.reservation_notice} />
+        </div>
       </DeviceStatus>
       <ButtonGroup>
         <Button
           href={`https://www.google.at/maps/dir//${latitude},${longitude}`}
           target="_blank"
         >
-          <Img src={directions} alt="Directions" />
+          <Img
+            style={{ marginRight: '10px' }}
+            src={directions}
+            alt="Directions"
+          />
           Google Maps
         </Button>
-        <Button disabled>Reserve (TBD)</Button>
+        <Button disabled>
+          <FormattedMessage {...messages.reserve} />
+        </Button>
       </ButtonGroup>
     </Wrapper>
   );

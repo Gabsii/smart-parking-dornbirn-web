@@ -4,7 +4,6 @@
 import React, { useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import { Map, Marker, TileLayer } from 'react-leaflet';
@@ -19,7 +18,6 @@ import {
 import reducer from './reducer';
 import { fetchDevices, setCurrentDevice } from './actions';
 import saga from './saga';
-import messages from './messages';
 import MapMarker from './Icon';
 
 import free from './iconMarker-free.svg';
@@ -44,7 +42,6 @@ export function LeafletMap(props) {
   if (loading) return <div>Loading...</div>;
   return (
     <div>
-      <FormattedMessage {...messages.header} />
       <br />
       {loading ? 'loading...' : ''}
       <Map
@@ -70,6 +67,7 @@ export function LeafletMap(props) {
                 position={coordinates}
                 onClick={() => {
                   setCurrentDeviceProp(id);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
             );
