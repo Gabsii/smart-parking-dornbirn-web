@@ -14,6 +14,7 @@ import H3 from 'components/H3';
 import Grid from 'components/Grid';
 import GridItem from 'components/GridItem';
 import home from 'images/undraw_home.svg';
+import CTA from './CTA';
 import CenteredH2 from './CenteredH2';
 import CenteredSection from './CenteredSection';
 import Hero from './Hero';
@@ -45,7 +46,18 @@ export function HomePage() {
               </H1>
               <FormattedHTMLMessage {...messages.startProjectMessage} />
             </HeroMessage>
-            <HeroImg src={home} alt="Girl next to car"/>
+            <HeroImg src={home} alt="Girl next to car" />
+            <FormattedMessage {...messages.demo}>
+              {txt => (
+                <CTA
+                  href={`mailto:lukas.gabsi@gmail.com?subject=${encodeURIComponent(
+                    `Smart Parking - ${txt}`,
+                  )}`}
+                >
+                  {txt}
+                </CTA>
+              )}
+            </FormattedMessage>
           </Hero>
         </CenteredSection>
         <CenteredSection>

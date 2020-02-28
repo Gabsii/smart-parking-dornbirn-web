@@ -87,4 +87,8 @@ export default defineMessages({
       },
     ],
   ],
+  demo: {
+    id: `${scope}.demo`,
+    defaultMessage: 'Use Cases',
+  },
 });

@@ -36,6 +36,7 @@
   "boilerplate.containers.HomePage.usecases.5.message": "Gemeinden aktualisieren die Parkkapazitäten, um z.B. ausreichend Behindertenparkplätze zur Verfügung zu stellen.",
   "boilerplate.containers.HomePage.usecases.6.header": "Gesetzesvollzug",
   "boilerplate.containers.HomePage.usecases.6.message": "Vereinfachte Einhaltung der Vorschriften und erhöhte Produktivität der Beamten durch einen Anstieg der Ticketzahlen pro Schicht.",
+  "boilerplate.containers.HomePage.demo": "Demo anfordern",
   "boilerplate.containers.LocaleToggle.de": "de",
   "boilerplate.containers.LocaleToggle.en": "en",
   "boilerplate.containers.NotFoundPage.header": "Seite nicht gefunden.",
