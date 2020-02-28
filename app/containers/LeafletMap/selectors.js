@@ -17,10 +17,16 @@ const makeSelectDevices = () =>
     leafletMapState => leafletMapState.devices,
   );
 
-const makeSelectLoading = () =>
+const makeSelectAllLoading = () =>
   createSelector(
     selectLeafletMapDomain,
-    leafletMapState => leafletMapState.loading,
+    leafletMapState => leafletMapState.allLoading,
+  );
+
+const makeSelectSingleLoading = () =>
+  createSelector(
+    selectLeafletMapDomain,
+    leafletMapState => leafletMapState.singleLoading,
   );
 
 const makeSelectError = () =>
@@ -49,7 +55,8 @@ export default makeSelectLeafletMap;
 export {
   selectLeafletMapDomain,
   makeSelectDevices,
-  makeSelectLoading,
+  makeSelectAllLoading,
+  makeSelectSingleLoading,
   makeSelectError,
   makeSelectCurrentDevice,
 };

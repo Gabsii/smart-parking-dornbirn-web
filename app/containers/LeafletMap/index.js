@@ -13,7 +13,7 @@ import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
 import {
   makeSelectDevices,
-  makeSelectLoading,
+  makeSelectAllLoading,
   makeSelectError,
 } from './selectors';
 import reducer from './reducer';
@@ -89,7 +89,7 @@ LeafletMap.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   devices: makeSelectDevices(),
-  loading: makeSelectLoading(),
+  loading: makeSelectAllLoading(),
   error: makeSelectError(),
 });
 
