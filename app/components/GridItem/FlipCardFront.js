@@ -17,7 +17,7 @@ const FlipCardFront = styled.div`
   padding: 1em 2em;
   background: #313131;
   border-radius: 10px;
-  
+
   p {
     font-size: 0.9125rem;
     line-height: 160%;

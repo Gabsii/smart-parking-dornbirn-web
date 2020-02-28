@@ -12,6 +12,10 @@ export default defineMessages({
     id: `${scope}.start_project.header`,
     defaultMessage: 'Start your next react project in seconds',
   },
+  startProjectHeader2: {
+    id: `${scope}.start_project.header2`,
+    defaultMessage: 'Start your next react project in seconds',
+  },
   startProjectMessage: {
     id: `${scope}.start_project.message`,
     defaultMessage:
@@ -82,6 +86,5 @@ export default defineMessages({
         defaultMessage: 'Use Case Message',
       },
     ],
-  ]
-    ,
+  ],
 });

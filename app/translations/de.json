@@ -21,6 +21,7 @@
   "boilerplate.containers.FeaturePage.state_management.header": "Berechenbare Stateverwaltung",
   "boilerplate.containers.FeaturePage.state_management.message": "Unidirectional data flow erlaubt uns alle Änderungen ihrer Applikation zu loggen und time travel debugging einzusetzen.",
   "boilerplate.containers.HomePage.start_project.header": "SmartParking",
+  "boilerplate.containers.HomePage.start_project.header2": "Smart Parking",
   "boilerplate.containers.HomePage.start_project.message": "SmartParking ist ein Parking Service der Tempus. Anim voluptatibus doloribus! Consectetuer sapiente, aliquet volutpat cupidatat donec faucibus rhoncus, torquent corrupti aliquet mattis necessitatibus officia, aenean? ",
   "boilerplate.containers.HomePage.usecases.header": "Verwendungszwecke",
   "boilerplate.containers.HomePage.usecases.1.header": "Parkleitsysteme",

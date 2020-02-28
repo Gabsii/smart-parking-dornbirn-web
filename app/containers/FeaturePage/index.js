@@ -3,7 +3,7 @@
  *
  * List all the features
  */
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
@@ -13,7 +13,7 @@ import messages from './messages';
 
 export default function FeaturePage() {
   return (
-    <div>
+    <Fragment>
       <Helmet>
         <title>Feature Page</title>
         <meta
@@ -21,10 +21,12 @@ export default function FeaturePage() {
           content="Feature page of React.js Boilerplate application"
         />
       </Helmet>
-      <H1>
-        <FormattedMessage {...messages.header} />
-      </H1>
-      <LeafletMap />
-    </div>
+      <div style={{ marginTop: '75px', minHeight: '500px' }}>
+        <H1>
+          <FormattedMessage {...messages.header} />
+        </H1>
+        <LeafletMap />
+      </div>
+    </Fragment>
   );
 }

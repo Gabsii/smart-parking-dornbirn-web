@@ -7,16 +7,14 @@ import messages from './messages';
 
 function Header() {
   return (
-    <div>
-      <NavBar>
-        <HeaderLink to="/">
-          <FormattedMessage {...messages.home} />
-        </HeaderLink>
-        <HeaderLink to="/features">
-          <FormattedMessage {...messages.features} />
-        </HeaderLink>
-      </NavBar>
-    </div>
+    <NavBar>
+      <HeaderLink to="/">
+        <FormattedMessage {...messages.home} />
+      </HeaderLink>
+      <HeaderLink to="/features">
+        <FormattedMessage {...messages.features} />
+      </HeaderLink>
+    </NavBar>
   );
 }
 

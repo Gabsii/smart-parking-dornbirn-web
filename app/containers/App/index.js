@@ -27,6 +27,7 @@ const AppWrapper = styled.div`
 
 const SwitchWrapper = styled.div`
   max-width: calc(1024px + 16px * 2);
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 `;

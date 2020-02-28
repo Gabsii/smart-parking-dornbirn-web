@@ -6,7 +6,7 @@
 
 import React, { memo } from 'react';
 import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { compose } from 'redux';
 
 import H1 from 'components/H1';
@@ -22,6 +22,11 @@ import HeroMessage from './HeroMessage';
 import messages from './messages';
 
 export function HomePage() {
+  const title =
+    window.innerWidth > 420
+      ? messages.startProjectHeader
+      : messages.startProjectHeader2;
+
   return (
     <article>
       <Helmet>
@@ -31,14 +36,14 @@ export function HomePage() {
           content="A React.js Boilerplate application homepage"
         />
       </Helmet>
-      <div style={{ marginTop: '75px' }}>
+      <div style={{ marginTop: '50px' }}>
         <CenteredSection>
           <Hero>
             <HeroMessage>
               <H1>
-                <FormattedMessage {...messages.startProjectHeader} />
+                <FormattedMessage {...title} />
               </H1>
-              <FormattedMessage {...messages.startProjectMessage} />
+              <FormattedHTMLMessage {...messages.startProjectMessage} />
             </HeroMessage>
             <HeroImg src={home} />
           </Hero>
