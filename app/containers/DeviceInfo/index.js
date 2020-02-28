@@ -4,12 +4,14 @@
  *
  */
 
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import L from 'leaflet';
+import * as ELG from 'esri-leaflet-geocoder';
 
 import H2 from 'components/H2';
 import Img from 'components/Img';
@@ -26,6 +28,21 @@ import DeviceStatus from './DeviceStatus';
 export function DeviceInfo(props) {
   const { device } = props;
   const { isParked, latitude, longitude, deviceId, updatedAt } = device;
+  const [address, setAddress] = useState();
+
+  useEffect(() => {
+    if ((latitude, longitude)) {
+      const geocontrol = new ELG.ReverseGeocode();
+      geocontrol
+        .latlng(new L.LatLng(latitude, longitude))
+        .run((error, result) => {
+          if (error) {
+            return;
+          }
+          setAddress(result.address.Match_addr);
+        });
+    }
+  });
 
   if (Object.keys(device).length === 0) return null;
 
@@ -70,7 +87,7 @@ export function DeviceInfo(props) {
           <FormattedMessage
             {...messages.address}
             values={{
-              address: 'TBD',
+              address,
             }}
           />
         </div>
