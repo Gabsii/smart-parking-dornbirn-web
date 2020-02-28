@@ -16,42 +16,45 @@ import Img from 'components/Img';
 import { makeSelectCurrentDevice } from '../LeafletMap/selectors';
 import messages from './messages';
 import Button from './Button';
-import Link from './Link';
+import StatusIndicator from './StatusIndicator';
 import Wrapper from './Wrapper';
-import DeviceStatus from './DeviceStatus';
+import ButtonGroup from './ButtonGroup';
 
 import directions from './directions.svg';
+import DeviceStatus from './DeviceStatus';
 
 export function DeviceInfo(props) {
   const { device } = props;
+  const { isParked, latitude, longitude, deviceId, updatedAt } = device;
 
   if (Object.keys(device).length === 0) return null;
 
   return (
-    <Wrapper>
+    <Wrapper id="device-info">
       {/* <FormattedMessage {...messages.header} /> */}
       <DeviceStatus>
-        <H2>Device: {device.deviceId}</H2>
-        {/* <span>Lat: {device.latitude}</span>
-        <span style={{marginLeft: '5px'}}>Long: {device.longitude}</span> */}
-        <div>Status: {device.isParked ? 'occupied' : 'free'}</div>
+        <H2>
+          Device: {deviceId}
+          <StatusIndicator isParked={isParked} />
+        </H2>
+        <div>Status: {isParked ? 'occupied' : 'free'}</div>
         <div>
-          {device.isParked
-            ? `Last Updated At: ${new Date(device.updatedAt).toLocaleString()}`
+          {isParked
+            ? `Last Updated At: ${new Date(updatedAt).toLocaleString()}`
             : ''}
         </div>
         <div>Address: TBD</div>
       </DeviceStatus>
-      <Button>
-        <Img src={directions} alt="Directions" />
-        <Link
-          href={`https://www.google.at/maps/dir//${device.latitude},${
-            device.longitude
-          }`}
+      <ButtonGroup>
+        <Button
+          href={`https://www.google.at/maps/dir//${latitude},${longitude}`}
+          target="_blank"
         >
+          <Img src={directions} alt="Directions" />
           Google Maps
-        </Link>
-      </Button>
+        </Button>
+        <Button disabled>Reserve (TBD)</Button>
+      </ButtonGroup>
     </Wrapper>
   );
 }

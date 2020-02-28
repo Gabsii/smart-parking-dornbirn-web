@@ -6,6 +6,10 @@ const Link = styled(A)`
   color: white;
   text-decoration: none;
   margin-left: 5px;
+
+  &:hover {
+    color: white;
+  }
 `;
 
 export default Link;
