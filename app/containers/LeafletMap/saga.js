@@ -1,7 +1,12 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import request from 'utils/request';
-import { fetchDevicesSuccess, fetchDevicesError } from './actions';
-import { FETCH_DATA } from './constants';
+import {
+  fetchDevicesSuccess,
+  fetchDevicesError,
+  setCurrentDeviceSuccess,
+  setCurrentDeviceError,
+} from './actions';
+import { FETCH_DATA, SET_CURRENT_DEVICE } from './constants';
 
 function* fetchDevicesAsync() {
   yield takeLatest(FETCH_DATA, fetchAllDevices);
@@ -21,6 +26,25 @@ function* fetchAllDevices() {
   }
 }
 
+function* fetchCurrentAsync() {
+  yield takeLatest(SET_CURRENT_DEVICE, fetchSingleDevice);
+}
+
+function* fetchSingleDevice(action) {
+  const id = action.deviceId;
+  try {
+    const requestUrl =
+      process.env.NODE_ENV === 'production'
+        ? `/api/devices/id.js?id=${id}`
+        : `http://localhost:8000/device/${id}`;
+    const devices = yield call(request, requestUrl);
+
+    yield put(setCurrentDeviceSuccess(devices));
+  } catch (error) {
+    yield put(setCurrentDeviceError(error.toString()));
+  }
+}
+
 export default function* rootSaga() {
-  yield all([fetchDevicesAsync()]);
+  yield all([fetchDevicesAsync(), fetchCurrentAsync()]);
 }

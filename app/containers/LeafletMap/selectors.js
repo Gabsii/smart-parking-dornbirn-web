@@ -29,6 +29,12 @@ const makeSelectError = () =>
     leafletMapState => leafletMapState.error,
   );
 
+const makeSelectCurrentDevice = () =>
+  createSelector(
+    selectLeafletMapDomain,
+    leafletMapState => leafletMapState.currentDevice,
+  );
+
 /**
  * Default selector used by LeafletMap
  */
@@ -45,4 +51,5 @@ export {
   makeSelectDevices,
   makeSelectLoading,
   makeSelectError,
+  makeSelectCurrentDevice,
 };

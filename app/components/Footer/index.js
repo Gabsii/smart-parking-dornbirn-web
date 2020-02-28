@@ -10,7 +10,7 @@ function Footer() {
   return (
     <Fragment>
       <svg
-        style={{ position: 'relative', top: '75px' }}
+        // style={{ position: 'relative', top: '75px' }}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
       >

@@ -45,7 +45,7 @@ export function HomePage() {
               </H1>
               <FormattedHTMLMessage {...messages.startProjectMessage} />
             </HeroMessage>
-            <HeroImg src={home} />
+            <HeroImg src={home} alt="Girl next to car"/>
           </Hero>
         </CenteredSection>
         <CenteredSection>
