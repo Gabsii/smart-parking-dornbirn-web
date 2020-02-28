@@ -28,6 +28,14 @@ import ButtonGroup from './ButtonGroup';
 import directions from './directions.svg';
 import DeviceStatus from './DeviceStatus';
 
+const LoadingIndicator = () => (
+  <Wrapper id="device-info">
+    <H2>
+      <FormattedMessage {...messages.loading} />
+    </H2>
+  </Wrapper>
+);
+
 export function DeviceInfo(props) {
   const { device, loading } = props;
   const { isParked, latitude, longitude, deviceId, updatedAt } = device;
@@ -48,13 +56,7 @@ export function DeviceInfo(props) {
   });
 
   if (loading) {
-    return (
-      <Wrapper id="device-info">
-        <H2>
-          <FormattedMessage {...messages.loading} />
-        </H2>
-      </Wrapper>
-    );
+    return <LoadingIndicator />;
   }
 
   if (Object.keys(device).length === 0) return null;
