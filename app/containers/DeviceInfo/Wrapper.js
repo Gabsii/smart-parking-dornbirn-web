@@ -18,6 +18,10 @@ const Wrapper = styled.div`
   background-color: white;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export default Wrapper;

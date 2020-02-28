@@ -10,6 +10,11 @@ const Button = styled.button`
   color: white;
   font-size: 1rem;
   height: 2.5rem;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 25px;
+  }
+
 `;
 
 export default Button;
