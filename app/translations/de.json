@@ -46,5 +46,6 @@
   "app.containers.DeviceInfo.updated": "Zuletzt gesehen: ",
   "app.containers.DeviceInfo.address": "Adresse: {address}",
   "app.containers.DeviceInfo.reserve": "Reservieren (TBD)",
-  "app.containers.DeviceInfo.reservation_notice": "Die Reservieren Funktion ist derzeit noch in Planung und wird demnächst eingeführt."
+  "app.containers.DeviceInfo.reservation_notice": "Die Reservieren Funktion ist derzeit noch in Planung und wird demnächst eingeführt.",
+  "gengeral.loading": "Lädt..."
 }

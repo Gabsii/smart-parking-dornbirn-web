@@ -9,6 +9,10 @@ import { defineMessages } from 'react-intl';
 export const scope = 'app.containers.DeviceInfo';
 
 export default defineMessages({
+  loading: {
+    id: `general.loading`,
+    defaultMessage: 'Loading...',
+  },
   device: {
     id: `${scope}.device`,
     defaultMessage: 'Gerät',

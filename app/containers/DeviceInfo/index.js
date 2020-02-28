@@ -15,7 +15,10 @@ import * as ELG from 'esri-leaflet-geocoder';
 
 import H2 from 'components/H2';
 import Img from 'components/Img';
-import { makeSelectCurrentDevice } from '../LeafletMap/selectors';
+import {
+  makeSelectCurrentDevice,
+  makeSelectSingleLoading,
+} from '../LeafletMap/selectors';
 import messages from './messages';
 import Button from './Button';
 import StatusIndicator from './StatusIndicator';
@@ -26,7 +29,7 @@ import directions from './directions.svg';
 import DeviceStatus from './DeviceStatus';
 
 export function DeviceInfo(props) {
-  const { device } = props;
+  const { device, loading } = props;
   const { isParked, latitude, longitude, deviceId, updatedAt } = device;
   const [address, setAddress] = useState();
 
@@ -43,6 +46,16 @@ export function DeviceInfo(props) {
         });
     }
   });
+
+  if (loading) {
+    return (
+      <Wrapper id="device-info">
+        <H2>
+          <FormattedMessage {...messages.loading} />
+        </H2>
+      </Wrapper>
+    );
+  }
 
   if (Object.keys(device).length === 0) return null;
 
@@ -117,10 +130,12 @@ export function DeviceInfo(props) {
 
 DeviceInfo.propTypes = {
   device: PropTypes.object.isRequired,
+  loading: PropTypes.bool,
 };
 
 const mapStateToProps = createStructuredSelector({
   device: makeSelectCurrentDevice(),
+  loading: makeSelectSingleLoading(),
 });
 
 const withConnect = connect(
