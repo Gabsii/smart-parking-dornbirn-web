@@ -10,6 +10,8 @@ const CTA = styled.a`
   left: 50%;
   transform: translateX(-50%);
   margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: bold;
 
   box-shadow: 0 0.5px 2.2px rgba(0, 0, 0, 0.02),
     0 1.3px 5.3px rgba(0, 0, 0, 0.028), 0 2.7px 10px rgba(0, 0, 0, 0.035),
