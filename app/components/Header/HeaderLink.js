@@ -21,4 +21,8 @@ export default styled(Link)`
     background: #c1352e;
     color: #fff;
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 0.25em;
+  }
 `;

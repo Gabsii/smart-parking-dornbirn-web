@@ -32,6 +32,7 @@ const Hero = styled.div`
 
   @media screen and (max-width: 1024px) {
     padding: 75px 30px;
+    width: auto;
   }
 `;
 

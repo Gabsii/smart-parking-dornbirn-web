@@ -2,10 +2,23 @@ import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 
 const spin = keyframes`
+    from {
+      transform: rotate(0deg);
+    }
     to {
       transform: rotate(360deg);
     }
   `;
+
+const ltr = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(1000%);
+  }
+`;
 
 const styles = css`
   .backdrop {
@@ -18,11 +31,12 @@ const styles = css`
 
   #innerWheel {
     animation-name: ${spin};
-    animation-duration: 5s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     transform-box: fill-box;
+    animation-direction: alternate;
     transform-origin: center;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-play-state: running;
 
     &:hover {
@@ -33,13 +47,48 @@ const styles = css`
       animation-duration: 10s;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    svg {
+      animation-name: ${ltr};
+      animation-duration: 15s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate;
+      animation-play-state: running;
+    }
+
+    #innerWheel {
+      animation-iteration-count: 1;
+    }
+  }
 `;
 
 const AnimationWrap = styled.div`
   ${styles}
 
   @media screen and (max-width: 1024px) {
-    margin-left: 25px;
+    margin-left: 0;
+    transform: scale(0.8);
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      background-color: grey;
+      left: 0;
+      bottom: -100px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 10%;
+      background-color: darkgray;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 `;
 

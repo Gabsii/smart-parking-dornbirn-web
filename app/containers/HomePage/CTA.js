@@ -22,6 +22,10 @@ const CTA = styled.a`
     background-color: #d04039;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 1024px) {
+    min-width: 250px;
+  }
 `;
 
 export default CTA;

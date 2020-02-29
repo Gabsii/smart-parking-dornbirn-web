@@ -9,11 +9,18 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 import { compose } from 'redux';
 
-import H1 from 'components/H1';
-import H3 from 'components/H3';
 import Grid from 'components/Grid';
 import GridItem from 'components/GridItem';
+import H1 from 'components/H1';
+import H2 from 'components/H2';
+import H3 from 'components/H3';
+import Img from 'components/Img';
+
 import home from 'images/undraw_home.svg';
+import restaurant from 'images/undraw_restaurant.svg';
+import electricCar from 'images/undraw_electric_car.svg';
+import judge from 'images/undraw_judge.svg';
+
 import CTA from './CTA';
 import CenteredH2 from './CenteredH2';
 import CenteredSection from './CenteredSection';
@@ -21,6 +28,9 @@ import Hero from './Hero';
 import HeroImg from './HeroImg';
 import HeroMessage from './HeroMessage';
 import messages from './messages';
+import UseCase from './UseCase';
+
+const useCaseImages = [electricCar, restaurant, judge];
 
 export function HomePage() {
   const title =
@@ -61,25 +71,24 @@ export function HomePage() {
           </Hero>
         </CenteredSection>
         <CenteredSection>
-          <CenteredH2>
-            <FormattedMessage {...messages.useCasesHeader} />
-          </CenteredH2>
-          <Grid>
+          <FormattedMessage {...messages.useCasesHeader}>
+            {txt => <CenteredH2>{txt}</CenteredH2>}
+          </FormattedMessage>
+          <div>
             {messages.useCases.map((useCase, index) => (
-              <GridItem
-                classname="flip"
-                key={`${useCase[0]}-${index}`}
-                src={`https://picsum.photos/200/22${index}`}
-              >
-                <H3>
-                  <FormattedMessage {...useCase[0]} />
-                </H3>
-                <p>
-                  <FormattedMessage {...useCase[1]} />
-                </p>
-              </GridItem>
+              <UseCase key={`${useCase[0]}-${index}`} even={!(index % 2)}>
+                <div>
+                  <H2>
+                    <FormattedMessage {...useCase[0]} />
+                  </H2>
+                  <p style={{ padding: '0 3em' }}>
+                    <FormattedMessage {...useCase[1]} />
+                  </p>
+                </div>
+                <Img src={useCaseImages[index]} alt="Use Case Image" />
+              </UseCase>
             ))}
-          </Grid>
+          </div>
         </CenteredSection>
       </div>
     </article>

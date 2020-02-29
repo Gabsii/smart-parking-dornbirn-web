@@ -6,8 +6,8 @@ const TeamMessageWrapper = styled.div`
   padding: 20px 50px 0 30px;
 
   @media screen and (max-width: 1024px) {
-    flex-direction: row-reverse;
-    padding: 20px 50px 0;
+    flex-direction: column-reverse;
+    padding: 20px 16px 0;
   }
 `;
 

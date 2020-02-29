@@ -8,8 +8,8 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import H1 from 'components/H1';
-import LeafletMap from 'containers/LeafletMap';
-import DeviceInfo from 'containers/DeviceInfo';
+import LeafletMap from 'containers/LeafletMap/Loadable';
+import DeviceInfo from 'containers/DeviceInfo/Loadable';
 import messages from './messages';
 
 export default function FeaturePage() {

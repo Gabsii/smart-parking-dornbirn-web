@@ -55,37 +55,7 @@ export default defineMessages({
         id: `${scope}.usecases.3.message`,
         defaultMessage: 'Use Case Message',
       },
-    ],
-    [
-      {
-        id: `${scope}.usecases.4.header`,
-        defaultMessage: 'Use Case Header',
-      },
-      {
-        id: `${scope}.usecases.4.message`,
-        defaultMessage: 'Use Case Message',
-      },
-    ],
-    [
-      {
-        id: `${scope}.usecases.5.header`,
-        defaultMessage: 'Use Case Header',
-      },
-      {
-        id: `${scope}.usecases.5.message`,
-        defaultMessage: 'Use Case Message',
-      },
-    ],
-    [
-      {
-        id: `${scope}.usecases.6.header`,
-        defaultMessage: 'Use Case Header',
-      },
-      {
-        id: `${scope}.usecases.6.message`,
-        defaultMessage: 'Use Case Message',
-      },
-    ],
+    ]
   ],
   demo: {
     id: `${scope}.demo`,

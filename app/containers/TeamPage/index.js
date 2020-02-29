@@ -17,7 +17,6 @@ import H3 from 'components/H3';
 import H2 from 'components/H2';
 import H1 from 'components/H1';
 import messages from './messages';
-import Street from './Street';
 import TeamMessage from './TeamMessage';
 import TeamMessageWrapper from './TeamMessageWrapper';
 import TeamImg from './TeamImg';
@@ -53,7 +52,6 @@ export function TeamPage() {
         </TeamMessage>
         <TeamImg src={team} alt="team" />
       </TeamMessageWrapper>
-      <Street />
       <Grid>
         {messages.team.map((member, index) => (
           <GridItem
