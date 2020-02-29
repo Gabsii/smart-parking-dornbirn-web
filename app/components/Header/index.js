@@ -14,6 +14,9 @@ function Header() {
       <HeaderLink to="/features">
         <FormattedMessage {...messages.features} />
       </HeaderLink>
+      <HeaderLink to="/team">
+        <FormattedMessage {...messages.team} />
+      </HeaderLink>
     </NavBar>
   );
 }

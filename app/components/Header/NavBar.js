@@ -8,4 +8,5 @@ export default styled.nav`
   color: #ffffff;
   width: 100vw;
   left: 0;
+  z-index: 10;
 `;

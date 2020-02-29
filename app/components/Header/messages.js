@@ -16,4 +16,8 @@ export default defineMessages({
     id: `${scope}.features`,
     defaultMessage: 'Features',
   },
+  team: {
+    id: `${scope}.team`,
+    defaultMessage: 'Features',
+  },
 });
